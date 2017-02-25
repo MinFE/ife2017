@@ -1,0 +1,19 @@
+{
+  "name": "ife2017-task",
+  "version": "1.0.0",
+  "description": "ife-2017-task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinFE/ife2017.git"
+  },
+  "author": "minfive",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MinFE/ife2017/issues"
+  },
+  "homepage": "https://github.com/MinFE/ife2017#readme"
+}
