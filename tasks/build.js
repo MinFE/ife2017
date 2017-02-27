@@ -20,5 +20,8 @@ let config = require(path.join('..', _src, 'webpack.config.js'));
 rm('-rf', path.join(_src, 'dist'));
 
 webpack(webpackMerge(baseConfig, config), (err, stats) => {
+	if (err) {
+		console.error(err);
+	}
 	console.log(stats);
 });
