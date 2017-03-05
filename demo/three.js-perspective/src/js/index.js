@@ -8,28 +8,24 @@
  */
 
 import createCanvas from './createCanvas';
-import calculation from './calculation';
 import * as THREE from 'three';
 
 export default function() {
 	let 
-		canvas = createCanvas('page-main'),
-		renderer = new THREE.WebGLRenderer({ canvas }),
+		renderer = new THREE.WebGLRenderer({
+			canvas: createCanvas('page-main')
+		}),
 		scene = new THREE.Scene(),
-		proportion = canvas.width / canvas.height, // 视窗宽高比例
-		camera = new THREE.OrthographicCamera(-4, 4, 2, -(8 / proportion - 2), 1, 10);
+		camera = new THREE.PerspectiveCamera(45, 4 / 3, 1, 100);
 
 	renderer.setClearColor(0x000000);
-	// camera.position.set(0, 0, 5);
-	camera.position.set(4, -3, 5);
-	camera.lookAt(new THREE.Vector3(0, 0, 0));
+	camera.position.set(0, 0, 5);
 	scene.add(camera);
 
 	let cube = new THREE.Mesh(
-		new THREE.CubeGeometry(1, 1, 1),
+		new THREE.CubeGeometry(1, 2, 3),
 		new THREE.MeshBasicMaterial({
-			color: 0xff0000,
-			wireframe: true
+			color: 0xff0000
 		})
 	);
 

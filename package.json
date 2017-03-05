@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-three-01": "node tasks/build.js --src:three.js-01",
-    "dev-three-01": "node tasks/dev.js --src:three.js-01"
+    "dev-three-01": "node tasks/dev.js --src:three.js-01",
+    "build-demo-three-orthographic": "node tasks/build.js --src:/demo/three.js-orthographic",
+    "dev-demo-three-orthographic": "node tasks/dev.js --src:/demo/three.js-orthographic",
+    "build-demo-three-perspective": "node tasks/build.js --src:/demo/three.js-perspective",
+    "dev-demo-three-perspective": "node tasks/dev.js --src:/demo/three.js-perspective"
   },
   "repository": {
     "type": "git",
