@@ -29,10 +29,14 @@ const compiler = webpack(webpackMerge(baseConfig, config), (err, stats) => {
 		chunkModules: false
 	}) + '\n');
 });
-
+console.log(path.join('..', _src, 'src'))
 const server = new webpackServer(compiler, {
 	stats: {
 		colors: true
+	},
+	contentBase: path.resolve(__dirname, path.join('..', _src, 'src')),
+	staticOptions: {
+		redirect: false
 	}
 });
 

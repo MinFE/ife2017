@@ -1,7 +1,6 @@
 const path = require('path');
 
 const 
-	ExtractTextPlugin = require('extract-text-webpack-plugin'),
 	HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -18,6 +17,6 @@ module.exports = {
 		// html模板
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, 'index.html')
-		})
+		}),
 	]
 }

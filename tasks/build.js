@@ -18,6 +18,7 @@ const _src = argvs.reduce((p, argv) => {
 let config = require(path.join('..', _src, 'webpack.config.js'));
 
 rm('-rf', path.join(_src, 'dist'));
+cp('-R', path.join(_src, 'src', 'static'), path.join(_src, 'dist', 'static'));
 
 webpack(webpackMerge(baseConfig, config), (err, stats) => {
 	if (err) {

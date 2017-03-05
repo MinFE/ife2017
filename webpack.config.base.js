@@ -5,7 +5,6 @@ const
 	ExtractTextPlugin = require('extract-text-webpack-plugin'),
 	HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
 	module: {
 		rules: [
