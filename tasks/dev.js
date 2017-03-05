@@ -1,8 +1,7 @@
-require('shelljs/global');
-
 const 
 	path = require('path'),
 	webpack = require('webpack'),
+	webpackServer = require('webpack-dev-server');
 	webpackMerge = require('webpack-merge');
 
 const baseConfig = require('../webpack.config.base.js');
@@ -17,9 +16,7 @@ const _src = argvs.reduce((p, argv) => {
 
 let config = require(path.join('..', _src, 'webpack.config.js'));
 
-rm('-rf', path.join(_src, 'dist'));
-
-webpack(webpackMerge(baseConfig, config), (err, stats) => {
+const compiler = webpack(webpackMerge(baseConfig, config), (err, stats) => {
 	if (err) {
 		console.error(err);
 	}
@@ -32,3 +29,13 @@ webpack(webpackMerge(baseConfig, config), (err, stats) => {
 		chunkModules: false
 	}) + '\n');
 });
+
+const server = new webpackServer(compiler, {
+	stats: {
+		colors: true
+	}
+});
+
+server.listen(8899, '127.0.0.1', () => {
+	console.log('Starting server on http://127.0.0.1:8899');
+})

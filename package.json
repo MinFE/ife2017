@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-three-01": "node tasks/build.js --src:three.js-01"
+    "build-three-01": "node tasks/build.js --src:three.js-01",
+    "dev-three-01": "node tasks/dev.js --src:three.js-01"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "style-loader": "^0.13.2",
     "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
     "webpack-merge": "^3.0.0"
   }
 }

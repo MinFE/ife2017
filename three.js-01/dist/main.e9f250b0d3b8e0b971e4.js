@@ -15,14 +15,15 @@ exports.default = function () {
 		canvas: (0, _createCanvas2.default)('page-main')
 	}),
 	    scene = new THREE.Scene(),
-	    camera = new THREE.PerspectiveCamera(45, 4 / 3, 1, 100);
+	    camera = new THREE.OrthographicCamera(-1, 2, 1.5, -1.5, 1, 10);
 
 	renderer.setClearColor(0x000000);
 	camera.position.set(0, 0, 5);
 	scene.add(camera);
 
 	var cube = new THREE.Mesh(new THREE.CubeGeometry(1, 2, 3), new THREE.MeshBasicMaterial({
-		color: 0xff0000
+		color: 0xff0000,
+		wireframe: true
 	}));
 
 	scene.add(cube);
@@ -82,13 +83,13 @@ var _style = __webpack_require__(1);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _js = __webpack_require__(0);
+var _orthographic = __webpack_require__(0);
 
-var _js2 = _interopRequireDefault(_js);
+var _orthographic2 = _interopRequireDefault(_orthographic);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-document.body.onload = (0, _js2.default)();
+document.body.onload = (0, _orthographic2.default)();
 
 /***/ })
 ],[4]);
