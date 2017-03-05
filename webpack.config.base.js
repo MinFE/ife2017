@@ -9,13 +9,32 @@ const
 module.exports = {
 	module: {
 		rules: [
+			// {
+			// 	test: /\.(sass|scss)$/,
+			// 	exclude: /node_modules/,
+			// 	use: ExtractTextPlugin.extract({
+			// 		use: [
+			// 			'css-loader',
+			// 			'sass-loader'
+			// 		]
+			// 	})
+			// },
 			{
-				test: /\.(sass|scss)$/,
+				test: /\.css$/,
 				exclude: /node_modules/,
 				use: ExtractTextPlugin.extract({
 					use: [
 						'css-loader',
-						'sass-loader'
+						{
+							loader: 'postcss-loader',
+							options: {
+								plugins: function() {
+									return [
+										require('postcss-cssnext')
+									]
+								}
+							}
+						}
 					]
 				})
 			},

@@ -1,0 +1,56 @@
+/*! <author: minfive; github: https://github.com/Mrminfive> */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.page {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	height: 100vh;
+}
+
+.page__header {
+	background-color: #24292e;
+	padding: 20px;
+}
+
+.page__title {
+	color: #fff;
+	text-align: center;
+}
+
+.page__main {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	border: 4px solid #24292e;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.main__section {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	-ms-flex-item-align: stretch;
+	    align-self: stretch;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.main__section + .main__section {
+	border-left: 4px solid #24292e;
+}

@@ -6,8 +6,8 @@ const
 
 module.exports = {
 	entry: {
-		main: path.resolve(__dirname, 'src/index.js'),
-		three: 'three.js'
+		main: path.resolve(__dirname, 'src/app.js'),
+		three: 'three'
 	},
 	output: {
 		filename: '[name].[chunkhash].js',
