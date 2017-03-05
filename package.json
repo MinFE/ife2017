@@ -10,7 +10,9 @@
     "build-demo-three-orthographic": "node tasks/build.js --src:/demo/three.js-orthographic",
     "dev-demo-three-orthographic": "node tasks/dev.js --src:/demo/three.js-orthographic",
     "build-demo-three-perspective": "node tasks/build.js --src:/demo/three.js-perspective",
-    "dev-demo-three-perspective": "node tasks/dev.js --src:/demo/three.js-perspective"
+    "dev-demo-three-perspective": "node tasks/dev.js --src:/demo/three.js-perspective",
+    "build-demo-three-text-geometry": "node tasks/build.js --src:/demo/three.js-text-geometry",
+    "dev-demo-three-text-geometry": "node tasks/dev.js --src:/demo/three.js-text-geometry"
   },
   "repository": {
     "type": "git",
