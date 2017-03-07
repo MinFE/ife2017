@@ -1,4 +1,5 @@
 const 
+	path = require('path'),
 	webpack = require('webpack');
 
 const 
@@ -43,7 +44,7 @@ module.exports = {
 				use: [{
 					loader: 'babel-loader',
 					options: {
-						presets: ['es2015', 'stage-2'],
+						presets: ['es2015', 'es2016', 'es2017', 'stage-3'],
 						plugins: ['transform-runtime'],
 						cacheDirectory: true
 					}

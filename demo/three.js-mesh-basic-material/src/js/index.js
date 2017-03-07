@@ -59,8 +59,12 @@ export default function() {
 				// beveSize: 45
 			}),
 			new THREE.MeshBasicMaterial({
-				color: 0xff00f0,
-				wireframe: true
+				color: 0xffff00,
+				wireframe: true,
+				opacity: 0.3,
+				// visible: false
+				// side: THREE.DoubleSide
+				
 			})
 		);
 

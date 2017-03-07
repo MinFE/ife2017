@@ -20,7 +20,13 @@ let config = require(path.join('..', _src, 'webpack.config.js'));
 rm('-rf', path.join(_src, 'dist'));
 cp('-R', path.join(_src, 'src', 'static'), path.join(_src, 'dist', 'static'));
 
-webpack(webpackMerge(baseConfig, config), (err, stats) => {
+webpack(webpackMerge(baseConfig, config, {
+	resolve: {
+		alias: {
+			Static: path.resolve(__dirname, path.join('..', _src, 'src', 'static')),
+		}
+	}
+}), (err, stats) => {
 	if (err) {
 		console.error(err);
 	}

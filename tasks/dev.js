@@ -16,7 +16,13 @@ const _src = argvs.reduce((p, argv) => {
 
 let config = require(path.join('..', _src, 'webpack.config.js'));
 
-const compiler = webpack(webpackMerge(baseConfig, config), (err, stats) => {
+const compiler = webpack(webpackMerge(baseConfig, config, {
+	resolve: {
+		alias: {
+			Static: path.resolve(__dirname, path.join('..', _src, 'src', 'static')),
+		}
+	}
+}), (err, stats) => {
 	if (err) {
 		console.error(err);
 	}
@@ -29,7 +35,7 @@ const compiler = webpack(webpackMerge(baseConfig, config), (err, stats) => {
 		chunkModules: false
 	}) + '\n');
 });
-console.log(path.join('..', _src, 'src'))
+
 const server = new webpackServer(compiler, {
 	stats: {
 		colors: true

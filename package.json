@@ -7,12 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-three-01": "node tasks/build.js --src:three.js-01",
     "dev-three-01": "node tasks/dev.js --src:three.js-01",
-    "build-demo-three-orthographic": "node tasks/build.js --src:/demo/three.js-orthographic",
     "dev-demo-three-orthographic": "node tasks/dev.js --src:/demo/three.js-orthographic",
-    "build-demo-three-perspective": "node tasks/build.js --src:/demo/three.js-perspective",
     "dev-demo-three-perspective": "node tasks/dev.js --src:/demo/three.js-perspective",
-    "build-demo-three-text-geometry": "node tasks/build.js --src:/demo/three.js-text-geometry",
-    "dev-demo-three-text-geometry": "node tasks/dev.js --src:/demo/three.js-text-geometry"
+    "dev-demo-three-text-geometry": "node tasks/dev.js --src:/demo/three.js-text-geometry",
+    "dev-demo-three-mesh-basic-material": "node tasks/dev.js --src:/demo/three.js-mesh-basic-material",
+    "dev-demo-three-mesh-lambert-material": "node tasks/dev.js --src:/demo/three.js-mesh-lambert-material"
   },
   "repository": {
     "type": "git",
@@ -30,9 +29,12 @@
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
-    "babel-preset-stage-2": "^6.22.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-es2017": "^6.22.0",
+    "babel-preset-stage-3": "^6.22.0",
     "css-loader": "^0.26.2",
     "extract-text-webpack-plugin": "^2.0.0",
     "html-webpack-plugin": "^2.28.0",
