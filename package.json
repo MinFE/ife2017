@@ -11,7 +11,8 @@
     "dev-demo-three-perspective": "node tasks/dev.js --src:/demo/three.js-perspective",
     "dev-demo-three-text-geometry": "node tasks/dev.js --src:/demo/three.js-text-geometry",
     "dev-demo-three-mesh-basic-material": "node tasks/dev.js --src:/demo/three.js-mesh-basic-material",
-    "dev-demo-three-mesh-lambert-material": "node tasks/dev.js --src:/demo/three.js-mesh-lambert-material"
+    "dev-demo-three-mesh-lambert-material": "node tasks/dev.js --src:/demo/three.js-mesh-lambert-material",
+    "dev-demo-three-ball-animation": "node tasks/dev.js --src:/demo/three.js-ball-animation"
   },
   "repository": {
     "type": "git",
