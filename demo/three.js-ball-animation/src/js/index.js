@@ -68,6 +68,8 @@ export default function() {
 		scene = new THREE.Scene(), // 场景
 		proportion = canvas.width / canvas.height,
 		camera = new THREE.PerspectiveCamera(60, proportion, 1, 20), // 摄像机
+		cameraPerspective = new THREE.PerspectiveCamera(40, proportion, 1, 10), // 辅助摄像机
+		cameraHelper,
 		light = new THREE.DirectionalLight(0xffffff); // 灯光
 
 	let
@@ -118,16 +120,30 @@ export default function() {
 	// 布置
 	async function setting() {
 		renderer.setClearColor(0xffffff);
+		renderer.shadowMaoEnabled = true;
 
-		light.position.set(3, 3, 9);
+		light.position.set(3, 6, 3);
 		scene.add(light);
 
 		camera.position.set(3, 3, 9);
 		camera.lookAt(new THREE.Vector3(0, 0, 0));
-		scene.add(camera);
+
+		cameraPerspective.position.set(3, 3, 4);
+		cameraPerspective.lookAt(new THREE.Vector3(0, 0, 0));
+		let cameraPerspectiveHelper = new THREE.CameraHelper( cameraPerspective );
+		scene.add( cameraPerspective );
+		scene.add( cameraPerspectiveHelper );
+
+		// cameraPerspective.rotation.y = Math.PI;
+		// let group = new THREE.Group();
+		// group.add(cameraPerspective);
+		// scene.add(group)
 
 		ballMesh = await initBallMesh(BALL_RADIUS, 100, 100);
 		planeMesh = await initPlaneMesh(PLANE_WIDTH, PLANE_HEIGHT);
+
+		ballMesh.castShadow = true;
+		planeMesh.receiveShadow = true;
 
 		scene.add(ballMesh);
 		scene.add(planeMesh);
